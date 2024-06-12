@@ -1,18 +1,20 @@
-import {View, StyleSheet} from 'react-native';
-import Exo2 from './components/Exo2/Exo2';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Calculator from './components/Exo3/Calculator';
+
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Exo2/>
+    <View style={styles.appContainer}>
+      <Calculator />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-})
-
+  appContainer: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+});
 
 export default App;
