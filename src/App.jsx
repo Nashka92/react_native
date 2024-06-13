@@ -16,12 +16,12 @@ const App = () => {
     <NavigationContainer>
       {/* // écran initial au lancement de l'application */}
       <Stack.Navigator initialRouteName="InitialScreen">
-        <Stack.Screen name="DetailContact" component={DetailContact} />
         <Stack.Screen
           name="InitialScreen"
           component={InitialScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="DetailContact" component={DetailContact} />
       </Stack.Navigator>
     </NavigationContainer>
   );

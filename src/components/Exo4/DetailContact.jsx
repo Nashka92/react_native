@@ -2,25 +2,22 @@ import {useLayoutEffect} from 'react';
 import {Button, Text, Linking} from 'react-native';
 
 const DetailContact = ({route, navigation}) => {
-  const id = route.params.id;
-  const lastName = route.params.lastName;
-  const firstName = route.params.firstName;
-  const tel = route.params.tel;
+  const contact = route.params.contact;
 
   function handleCallPress() {
-    Linking.openURL('tel:' + tel);
+    Linking.openURL(`tel:${contact.tel}`);
   }
 
   useLayoutEffect(() => {
-    navigation.setOptions({title: lastName});
+    navigation.setOptions({title: contact.lastName});
   });
 
   return (
     <>
-      <Text>{id}</Text>
-      <Text>{lastName}</Text>
-      <Text>{firstName}</Text>
-      <Text>{tel}</Text>
+      <Text>{contact.id}</Text>
+      <Text>{contact.lastName}</Text>
+      <Text>{contact.firstName}</Text>
+      <Text>{contact.tel}</Text>
       <Button title="Appeler" onPress={handleCallPress} />
     </>
   );
